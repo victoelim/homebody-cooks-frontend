@@ -18,7 +18,7 @@
     border: 0;
     background-color: #0D1F2D;
     color: white;
-
+    margin-right: 10px;
 }
 
 .nav-links {
@@ -31,7 +31,8 @@
 }
 
 .nav-links:hover {
-    border-bottom: 2px solid #0D1F2D;   
+    border-bottom: 2px solid #0D1F2D;
+    cursor: pointer;
 }
 
 .title h1{
