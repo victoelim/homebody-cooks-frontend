@@ -9,6 +9,8 @@ import Button from 'react-bootstrap/Button'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'react-toastify/dist/ReactToastify.css';
 import Homepage from './pages/Homepage/Hompage'
+import Recipes from './pages/Recipes/Recipes';
+import Ingredients from './pages/Ingredients/Ingredients';
 
 function App() {
   const [isOpen, setOpen] = useState(false);
@@ -21,7 +23,11 @@ function App() {
     <WebNavbar/>
     {isOpen ? <Modal /> : null}
     <ToastContainer/>
-    <Homepage/>
+    <Switch>
+      <Route exact path ="/" render={ () => <Homepage/> }/>
+      <Route path="/recipes/show"><Recipes/></Route>
+      <Route path="/recipes/:id/ingredients"><Ingredients/></Route>
+    </Switch>
     </LoggedInContext.Provider>
     
     </>
