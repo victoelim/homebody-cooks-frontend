@@ -1,5 +1,7 @@
-.navbar {
-    padding: 15px;
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap');
+
+.navigation-bar {
+    padding: 24px;
     background-color: #EDB015;
     color: white;
     display: flex;
@@ -7,20 +9,44 @@
     justify-content: space-around;
     align-items: center;
     width: 100vw;
-    height: 7vh;
+    height: 60px;
+    box-sizing: border-box;
 }
 .nav-button button {
-    padding: 0.5rem 2.5rem;
-    border-radius: 16px;
-    border: none;
+    padding: 0.5rem 2rem;
+    border-radius: 50px;
+    border: 0;
     background-color: #0D1F2D;
     color: white;
     margin-right: 10px;
 }
 
-.nav-links :hover {
-    align-self: stretch;
+.nav-links {
+    width: 10vw;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.nav-links:hover {
     border-bottom: 2px solid #0D1F2D;
     cursor: pointer;
 }
 
+.title h1{
+    font-family: 'Bree Serif', serif;
+    font-size: 24px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.nav-links a:hover {
+    color: white;
+    text-decoration: none;
+}
