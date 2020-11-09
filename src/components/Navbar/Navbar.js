@@ -37,14 +37,14 @@ const WebNavbar = () => {
     return (
         <>
             <div className='navigation-bar'>
+                <div className='title'>
+                    <h1>HomeBody Cooks</h1>
+                </div>
                 <div className='nav-links'>
                     <a href="#">Meals</a>
                 </div>
                 <div className='nav-links'>
                     <a href="#">Price</a>
-                </div>
-                <div className='title'>
-                    <h1>HomeBody Cooks</h1>
                 </div>
                 <div className='nav-links'>
                     <a href="#">How-To</a>

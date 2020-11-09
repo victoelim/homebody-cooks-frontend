@@ -119,6 +119,7 @@
 .footer a{
     color: white;
     text-decoration: none;
+    font-size: 0.75rem;
 }
 
 .footer a:hover {
@@ -129,4 +130,5 @@
     font-family: 'Bree Serif', serif;
     font-weight: bolder;
     color: white;
+    text-align: center;
 }

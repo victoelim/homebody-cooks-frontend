@@ -1,7 +1,7 @@
 import React from 'react';
 import '../Homepage/homepage.css';
 import Heroimage from '/Users/VictorLim/Desktop/Next Academy/HomeBody_Cooks_React/homebody-cooks/src/images/hero4.png';
-import Browserimg from '/Users/VictorLim/Desktop/Next Academy/HomeBody_Cooks_React/homebody-cooks/src/images/Browser.png';
+import Browserimg from '/Users/VictorLim/Desktop/Next Academy/HomeBody_Cooks_React/homebody-cooks/src/images/Browser1.png';
 
 const Homepage = () => {
     return (
