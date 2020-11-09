@@ -5,3 +5,39 @@ span {
 span:hover {
     cursor: pointer;
 }
+
+.input:focus {
+    outline-width : 0;
+}
+
+button {
+    background-color:  #0D1F2D;
+    color: white;
+    border: none;
+    height: 130%;
+}
+
+img {
+    height: 20px;
+    width: 20px;
+    margin-right: 5%;
+}
+
+.google {
+    color: #4285F4;
+    font-weight: bold;
+}
+
+.google-button {
+    background-color: white;
+    border: 1px solid lightgray;
+}
+
+.google-button:hover {
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    -webkit-box-shadow: 0px 0px 30px 0px lightskyblue;
+    -moz-box-shadow:    0px 0px 30px 0px lightskyblue;
+    box-shadow:         0px 0px 30px 0px lightskyblue;
+}

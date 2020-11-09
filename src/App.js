@@ -4,7 +4,10 @@ import './App.css';
 import WebNavbar from './components/Navbar/Navbar';
 import LoggedInContext from '../src/containers/LoggedInContext';
 import Modal from './components/Modal/Modal';
+import {toast, ToastContainer} from 'react-toastify';
+import Button from 'react-bootstrap/Button' 
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'react-toastify/dist/ReactToastify.css';
 import Homepage from './pages/Homepage/Hompage'
 
 function App() {
@@ -14,12 +17,13 @@ function App() {
 
   return (
     <>
-    
     <LoggedInContext.Provider value = {{isOpen, setOpen, isLogin, setIsLogin, isLoggedin, setIsLoggedin}}>
     <WebNavbar/>
     {isOpen ? <Modal /> : null}
-    </LoggedInContext.Provider>
+    <ToastContainer/>
     <Homepage/>
+    </LoggedInContext.Provider>
+    
     </>
     );
     

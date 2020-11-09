@@ -3,6 +3,9 @@ import axios from 'axios';
 import {toast } from 'react-toastify';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Container from 'react-bootstrap/Container';
 import "./SignupForm.css";
 
 
@@ -55,40 +58,61 @@ const SignUpForm = ({setOpen, setIsLogin, setIsLoggedin}) => {
       const handleClose = () => setOpen(false)
     return (
         <>
-            <Modal.Header closeButton>
-                <Modal.Title>Sign Up</Modal.Title>
+            <Modal.Header style = {{
+                borderBottomWidth : 0
+            }} closeButton>
             </Modal.Header>
             <Modal.Body>
-                    <label for="user_name">Name :</label>
-                    <br></br>
-                    <input className= "w-100" type="text" id="user_name" onChange = {(e) => setName(e.target.value)} value = {user_name} ></input>
-                    <br></br>
-                    <br></br>
-                    <label for="email">Email :</label>
-                    <br></br>
-                    <input className= "w-100" type='text' id='email' onChange = {(e) => setEmail(e.target.value)} value = {email}/>
-                    <br></br>
-                    <br></br>
-                    <label for="password">Password :</label>
-                    <br></br>
-                    <input className= "w-100" type='password' id='password' onChange = {(e) => setPassword(e.target.value)} value = {password}/>
-                    <br></br>
-                    <br></br>
-                    <label for="confirmPassword">Confirm Password :</label>
-                    <br></br>
-                    <input className= "w-100" type='text' id='confirmPassword' onChange = {(e) => setConfirmPassword(e.target.value)} value = {confirmPassword}/>
-                    <br></br>
-                    <br></br>
-                    <p>Already a user? <span onClick = {() => setIsLogin(true)}>Log In</span></p>
+                    <h1 className="text-center">Sign Up</h1>
+                    <Container fluid className="mt-5">
+                        <form onSubmit = {(e) => handleSubmit(e)}>
+                        <Row>
+                            <Col xs = {5}>
+                                <label for="user_name">Name :</label>
+                            </Col>
+                            <Col>
+                                <input className= "rounded-pill w-100 input bg-light" type="text" id="user_name" onChange = {(e) => setName(e.target.value)} value = {user_name} ></input>
+                            </Col>
+                        </Row>
+                        <br></br>
+                        <Row>
+                            <Col xs ={5}>
+                                <label for="email">Email :</label>
+                            </Col>
+                            <Col>
+                                <input className= "rounded-pill w-100 input bg-light" type='text' id='email' onChange = {(e) => setEmail(e.target.value)} value = {email}/>
+                            </Col>
+                        </Row>
+                        <br></br>
+                        <Row>
+                            <Col xs ={5}>
+                                <label for="password">Password :</label>
+                            </Col>
+                            <Col>
+                                <input className= "rounded-pill w-100 input bg-light" type='password' id='password' onChange = {(e) => setPassword(e.target.value)} value = {password}/>
+                            </Col>
+                        </Row>
+                        <br></br>
+                        <Row>
+                            <Col xs ={5}>
+                                <label for="confirmPassword">Confirm Password :</label>
+                            </Col>
+                            <Col>
+                                <input className= "rounded-pill w-100 input bg-light" type='password' id='confirmPassword' onChange = {(e) => setConfirmPassword(e.target.value)} value = {confirmPassword}/>
+                            </Col>
+                        </Row>
+                        <br></br>
+                        <Row className="justify-content-center mt-4">
+                            <Col sm = {7}>
+                                <button type="submit" className="w-100 rounded-pill">
+                                Sign Up
+                                </button>
+                            </Col>
+                        </Row>
+                        </form>
+                    <p className="text-center mt-4">Already a user? <span onClick = {() => setIsLogin(true)}>Log In</span></p>
+                    </Container>
             </Modal.Body>
-            <Modal.Footer>
-                <Button variant="secondary" onClick={handleClose}>
-                    Close
-                </Button>
-                <Button variant="primary" onClick = {(e) => handleSubmit(e)}>
-                    Sign Up
-                </Button>
-            </Modal.Footer>
     
         </>
     )

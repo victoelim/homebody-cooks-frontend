@@ -4,6 +4,7 @@ import LoginForm from "../../containers/LoginForm"
 import Modal from 'react-bootstrap/Modal'
 import Button from 'react-bootstrap/Button'
 import SignUpForm from '../../containers/SignupForm';
+import {ToastContainer} from 'react-toastify';
 
 const Modals = () => {
     const {isOpen, setOpen, isLogin, setIsLogin, setIsLoggedin} = useContext(LoggedInContext)
