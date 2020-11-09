@@ -108,7 +108,6 @@ const LoginForm = ({isOpen, setOpen, setIsLogin, setIsLoggedin}) => {
                     progress: undefined,
                 })
               } 
-              
           })
           .catch(error => {
             console.error(error.response) // so that we know what went wrong if the request failed

@@ -8,6 +8,7 @@ import {toast, ToastContainer} from 'react-toastify';
 import Button from 'react-bootstrap/Button' 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'react-toastify/dist/ReactToastify.css';
+import Homepage from './pages/Homepage/Hompage'
 
 function App() {
   const [isOpen, setOpen] = useState(false);
@@ -16,13 +17,13 @@ function App() {
 
   return (
     <>
-    <div>
     <LoggedInContext.Provider value = {{isOpen, setOpen, isLogin, setIsLogin, isLoggedin, setIsLoggedin}}>
     <WebNavbar/>
     {isOpen ? <Modal /> : null}
     <ToastContainer/>
+    <Homepage/>
     </LoggedInContext.Provider>
-    </div>
+    
     </>
     );
     
