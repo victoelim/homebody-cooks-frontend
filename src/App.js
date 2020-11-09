@@ -5,6 +5,7 @@ import WebNavbar from './components/Navbar/Navbar';
 import LoggedInContext from '../src/containers/LoggedInContext';
 import Modal from './components/Modal/Modal';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Homepage from './pages/Homepage/Hompage'
 
 function App() {
   const [isOpen, setOpen] = useState(false);
@@ -18,6 +19,7 @@ function App() {
     <WebNavbar/>
     {isOpen ? <Modal /> : null}
     </LoggedInContext.Provider>
+    <Homepage/>
     </>
     );
     

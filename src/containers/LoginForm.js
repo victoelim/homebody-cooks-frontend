@@ -16,8 +16,8 @@ const LoginForm = ({isOpen, setOpen, setIsLogin, setIsLoggedin}) => {
             user_password,
         })
         .then(response => {
-            localStorage.setItem('token', response.data.auth_token)
-            console.log (response.data.auth_token)
+            localStorage.setItem('token', response.data.token)
+            console.log (response.data.token)
             setIsLoggedin(true);
             toast.success("You're logged in", {
               position: "top-right",
