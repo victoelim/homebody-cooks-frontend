@@ -14,7 +14,7 @@ const Homepage = () => {
                     <Col sm = {12} className = "hero p-0">
                         <img src = {Heroimage} alt="ingredients"/>
                         <div className="herotext">
-                            <h2>Don't strees Over Your Meals,</h2>
+                            <h2>Don't stress Over Your Meals,</h2>
                             <h2>We'll Take Care of It.</h2>
                             <span>Fresh Ingredients Delivered to Your Doorstep.</span>
                             <button>Join Today</button>
