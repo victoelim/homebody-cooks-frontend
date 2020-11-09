@@ -5,3 +5,7 @@ span {
 span:hover {
     cursor: pointer;
 }
+
+.input:focus {
+    outline-width : 0;
+}
