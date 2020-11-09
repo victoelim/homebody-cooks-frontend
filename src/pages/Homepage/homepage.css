@@ -1,0 +1,132 @@
+.hero img {
+    height: auto;
+    width: 100vw;
+}
+
+.herotext {
+    position: absolute;
+    top: 350px;
+    left: 50px;
+}
+
+.herotext span {
+    display: block;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.herotext button {
+    padding: 0.5rem 2rem;
+    border-radius: 50px;
+    border: 0;
+    background-color: #0D1F2D;
+    color: white;
+    margin-right: 10px;
+}
+
+.herotext h2 {
+    font-size: 2.875rem;
+    font-weight: bolder;
+    color: white;
+}
+
+.steps-card-left {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 50px;
+    margin-left: 150px;
+    margin-bottom: 50px;
+    margin-right: 300px;
+}
+
+.steps-img img {
+    width: 50vh;
+    height: auto;
+}
+
+.steps-img {
+    margin: 0 15px;
+}
+
+.steps-texts p {
+    margin: 0;
+}
+
+.steps-texts h4 {
+    font-weight: bolder;
+}
+
+.steps-card-right {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+    margin-right: 150px;
+    margin-left: 350px;
+}
+
+.cta-card {
+    display:flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    margin: 20px;
+}
+
+.cta-img img {
+    width: 50vh;
+    height: auto;
+}
+
+.cta-img {
+    margin-bottom: 10px;
+}
+
+.cta-texts p {
+    margin-bottom: 10px;
+}
+
+.cta-texts h4 {
+    font-weight: bolder;
+}
+
+.cta-texts button {
+    padding: 0.5rem 6rem;
+    border-radius: 50px;
+    border: 0;
+    background-color: #0D1F2D;
+    color: white;
+    margin-right: 10px;
+    text-align: center;
+}
+
+.steps-section {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+.footer {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+    height: 50px;
+    width: 100vw;
+    background-color: #0D1F2D;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.footer a{
+    color: white;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: none;
+}
+
+.footer h6 {
+    font-family: 'Bree Serif', serif;
+    font-weight: bolder;
+    color: white;
+}
