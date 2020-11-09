@@ -24,7 +24,7 @@ function App() {
     {isOpen ? <Modal /> : null}
     <ToastContainer/>
     <Switch>
-      <Route exact path ="/" render={ () => <Homepage/> }/>
+      <Route exact path="/"><Homepage/></Route>
       <Route path="/recipes/show"><Recipes/></Route>
       <Route path="/recipes/:id/ingredients"><Ingredients/></Route>
     </Switch>

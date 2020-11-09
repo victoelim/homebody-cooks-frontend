@@ -102,6 +102,7 @@ const SignUpForm = ({setOpen, setIsLogin, setIsLoggedin}) => {
                             </Col>
                         </Row>
                         <br></br>
+
                         <div className="button-div text-center mt-4">
                                 <button type="submit" className="w-75 rounded-pill">
                                 Sign Up
