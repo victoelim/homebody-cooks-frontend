@@ -10,11 +10,15 @@ span:hover {
     outline-width : 0;
 }
 
-.login-button {
+
+
+.button-div button {
     background-color:  #0D1F2D;
     color: white;
     border: none;
-    height: 130%;
+    height: 35px;
+    margin-right: 0;
+    outline: none;
 }
 
 img {
@@ -31,6 +35,8 @@ img {
 .google-button {
     background-color: white;
     border: 1px solid lightgray;
+    margin-right: 0;
+    outline: none;
 }
 
 .google-button:hover {
@@ -46,4 +52,4 @@ input {
     border: 0;
     background-color: whitesmoke;
     filter: drop-shadow(4px 3px 3px rgba(0, 0, 0, 0.25));
-}
+

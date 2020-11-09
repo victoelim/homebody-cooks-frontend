@@ -41,7 +41,7 @@ const WebNavbar = () => {
                     <h1>HomeBody Cooks</h1>
                 </div>
                 <div className='nav-links'>
-                    <a href="#">Meals</a>
+                    <Link to ="/recipes/show"><a>Meals</a></Link>
                 </div>
                 <div className='nav-links'>
                     <a href="#">Price</a>

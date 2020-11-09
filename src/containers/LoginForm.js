@@ -169,22 +169,23 @@ const LoginForm = ({isOpen, setOpen, setIsLogin, setIsLoggedin}) => {
                     </Row>
                     <br></br>
 
-                    <Row className="justify-content-center mt-4">
-                        <Col sm = {7}>
-                            <button type="submit" className="w-100 rounded-pill login-button">
+
+                    <div className="button-div text-center mt-4">
+                       
+                            <button type="submit" className="w-75 rounded-pill">
                             Log In
                             </button>
-                        </Col>
-                    </Row>
+                        
+                    </div>
                     </form>
-                    <Row className="justify-content-center mt-4">
-                        <Col sm = {7}>
-                        <button onClick = { () => signIn()} className="w-100 rounded-pill google-button">
+                    <div className="button-div text-center mt-4">
+                        
+                        <button onClick = { () => signIn()} className="w-75 rounded-pill google-button">
                             <img src={google2}></img>
                             <span className = "google">Sign in with Google</span>
                         </button>
-                        </Col>
-                    </Row>
+                        
+                    </div>
                     <p className = "text-center mt-4">Not a user yet? <span onClick = {() => setIsLogin(false)}>Sign Up</span> here.</p>
                     </Container>
             </Modal.Body>

@@ -102,13 +102,12 @@ const SignUpForm = ({setOpen, setIsLogin, setIsLoggedin}) => {
                             </Col>
                         </Row>
                         <br></br>
-                        <Row className="justify-content-center mt-4">
-                            <Col sm = {7}>
-                                <button type="submit" className="w-100 rounded-pill login-button">
+
+                        <div className="button-div text-center mt-4">
+                                <button type="submit" className="w-75 rounded-pill">
                                 Sign Up
                                 </button>
-                            </Col>
-                        </Row>
+                        </div>
                         </form>
                     <p className="text-center mt-4">Already a user? <span onClick = {() => setIsLogin(true)}>Log In</span></p>
                     </Container>

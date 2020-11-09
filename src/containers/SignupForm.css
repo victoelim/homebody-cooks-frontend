@@ -9,3 +9,7 @@ span:hover {
 .input:focus {
     outline-width : 0;
 }
+
+.button-div {
+    height: 35px;
+}
