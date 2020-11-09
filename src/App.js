@@ -21,7 +21,11 @@ function App() {
     <WebNavbar/>
     {isOpen ? <Modal /> : null}
     <ToastContainer/>
-    <Homepage/>
+    <Switch>
+      <Route exact path="/">
+        <Homepage/>
+      </Route>
+    </Switch>
     </LoggedInContext.Provider>
     
     </>
