@@ -10,7 +10,7 @@ span:hover {
     outline-width : 0;
 }
 
-button {
+.login-button {
     background-color:  #0D1F2D;
     color: white;
     border: none;
@@ -40,4 +40,10 @@ img {
     -webkit-box-shadow: 0px 0px 30px 0px lightskyblue;
     -moz-box-shadow:    0px 0px 30px 0px lightskyblue;
     box-shadow:         0px 0px 30px 0px lightskyblue;
+}
+
+input {
+    border: 0;
+    background-color: whitesmoke;
+    filter: drop-shadow(4px 3px 3px rgba(0, 0, 0, 0.25));
 }

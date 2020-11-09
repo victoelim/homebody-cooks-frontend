@@ -55,7 +55,7 @@ const Homepage = () => {
                     <div className = "cta-texts">
                         <h4>Starting from RM 88</h4>
                         <p>No commitment. Cancel at anytime.</p>
-                        <button>Join Today</button>
+                        <button className="cta-button">Join Today</button>
                     </div>
                 </div>
             </section>

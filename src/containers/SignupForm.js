@@ -104,7 +104,7 @@ const SignUpForm = ({setOpen, setIsLogin, setIsLoggedin}) => {
                         <br></br>
                         <Row className="justify-content-center mt-4">
                             <Col sm = {7}>
-                                <button type="submit" className="w-100 rounded-pill">
+                                <button type="submit" className="w-100 rounded-pill login-button">
                                 Sign Up
                                 </button>
                             </Col>

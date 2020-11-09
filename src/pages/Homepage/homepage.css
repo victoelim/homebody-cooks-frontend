@@ -88,13 +88,12 @@
     font-weight: bolder;
 }
 
-.cta-texts button {
+.cta-button {
     padding: 0.5rem 6rem;
     border-radius: 50px;
     border: 0;
     background-color: #0D1F2D;
     color: white;
-    margin-right: 10px;
     text-align: center;
 }
 
