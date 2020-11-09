@@ -36,7 +36,7 @@ const WebNavbar = () => {
     }
     return (
         <>
-            <div className='navigation-bar'>
+            {/* <div className='navigation-bar'>
                 <div className='title'>
                     <h1>HomeBody Cooks</h1>
                 </div>
@@ -59,7 +59,29 @@ const WebNavbar = () => {
                     <Link><button onClick={SignupHandleClick}>Sign Up</button></Link>
                 </div>
                 }
-            </div>
+            </div> */}
+
+            <Navbar fixed = "top" expand="lg" className = "navigation-bar" variant = "dark">
+            <Navbar className = "title" href="#home">HomeBody Cooks</Navbar>
+            <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+            <Navbar.Collapse id="responsive-navbar-nav">
+                <Nav className="ml-auto">
+                    <Nav.Link href="#home">Meals</Nav.Link>
+                    <Nav.Link href="#link">Plans</Nav.Link>
+                    <Nav.Link href="#link">How-To</Nav.Link>
+                    {isLoggedin ?
+                        <div className='nav-button'>
+                            <Link><button onClick={LogOut}>Log out</button></Link>
+                        </div>
+                        :
+                        <div className='nav-button'>
+                            <Link><button onClick={LoginHandleClick}>Log In</button></Link>
+                            <Link><button onClick={SignupHandleClick}>Sign Up</button></Link>
+                        </div>
+                    }
+                </Nav>
+            </Navbar.Collapse>
+            </Navbar>
 
         </>
     )

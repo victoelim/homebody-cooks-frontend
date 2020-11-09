@@ -3,15 +3,24 @@
 .navigation-bar {
     padding: 24px;
     background-color: #EDB015;
-    color: white;
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-around;
     align-items: center;
     width: 100%;
-    height: 60px;
+    height: auto;
     box-sizing: border-box;
 }
+
+.navigation-bar a {
+    color: white;
+    margin-right: 50px;
+}
+
+.navigation-bar :last-child {
+    margin-right: 0;
+}
+
 .nav-button button {
     padding: 0.5rem 2rem;
     border-radius: 50px;
@@ -38,19 +47,20 @@
     cursor: pointer;
 }
 
-.title h1{
+.title{
     font-family: 'Bree Serif', serif;
     font-size: 24px;
     font-weight: bolder;
+    color: white;
 }
 
-.nav-links a {
+ a {
     color: white;
     text-decoration: none;
     font-size: 18px;
 }
 
-.nav-links a:hover {
+a:hover {
     color: white;
     text-decoration: none;
 }
