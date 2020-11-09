@@ -1,7 +1,10 @@
+.hero {
+    position: relative;
+}
 .hero img {
     height: auto;
     width: 100%;
-    margin-right: 0;
+    margin: 0;
 }
 
 .herotext {
@@ -31,62 +34,16 @@
     color: white;
 }
 
-.steps-card-left {
-    display: flex;
-    justify-content: flex-start;
-    margin-top: 50px;
-    margin-left: 150px;
-    margin-bottom: 50px;
-    margin-right: 300px;
-}
-
-.steps-img img {
-    width: 50vh;
-    height: auto;
-}
-
 .steps-img {
-    margin: 0 15px;
-}
-
-.steps-texts p {
+    width: 70%;
+    height: auto;
     margin: 0;
 }
 
-.steps-texts h4 {
-    font-weight: bolder;
-}
-
-.steps-card-right {
-    display: flex;
-    justify-content: flex-end;
-    margin-top: 20px;
-    margin-right: 150px;
-    margin-left: 350px;
-}
-
-.cta-card {
-    display:flex;
-    flex-flow: column nowrap;
-    align-items: center;
-    margin: 20px;
-}
-
-.cta-img img {
-    width: 50vh;
-    height: auto;
-}
-
 .cta-img {
-    margin-bottom: 10px;
-}
-
-.cta-texts p {
-    margin-bottom: 10px;
-}
-
-.cta-texts h4 {
-    font-weight: bolder;
+    width: 35%;
+    height: auto;
+    margin: 0;
 }
 
 .cta-button {
@@ -96,12 +53,6 @@
     background-color: #0D1F2D;
     color: white;
     text-align: center;
-}
-
-.steps-section {
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: center;
 }
 
 .footer {
