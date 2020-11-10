@@ -58,12 +58,11 @@ const SignUpForm = ({setOpen, setIsLogin, setIsLoggedin}) => {
       const handleClose = () => setOpen(false)
     return (
         <>
-            <Modal.Header style = {{
-                borderBottomWidth : 0
-            }} closeButton>
+            <Modal.Header className="modal-head" closeButton>
+                <h1 className="w-100 text-center p-0 pl-4 modal-title">Sign Up</h1>
             </Modal.Header>
             <Modal.Body>
-                    <h1 className="text-center">Sign Up</h1>
+                    
                     <Container fluid className="mt-5">
                         <form onSubmit = {(e) => handleSubmit(e)}>
                         <Row>

@@ -9,16 +9,18 @@ import LoggedInContext from "../../containers/LoggedInContext"
 
 
 const WebNavbar = () => {
-    const {isOpen, setOpen, isLogin, setIsLogin, isLoggedin, setIsLoggedin} = useContext(LoggedInContext)
+    const {isOpen, setOpen, isLogin, setIsLogin, isLoggedin, setIsLoggedin, setIsCart} = useContext(LoggedInContext)
 
     const LoginHandleClick = () => {
         setOpen(true)
         setIsLogin(true)
+        setIsCart(false)
     }
 
     const SignupHandleClick = () => {
         setOpen(true)
         setIsLogin(false)
+        setIsCart(false)
     }
 
     const LogOut = () => {
@@ -66,7 +68,7 @@ const WebNavbar = () => {
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="ml-auto">
-                    <Nav.Link href="#home">Meals</Nav.Link>
+                    <Nav.Link href="/recipes/show">Meals</Nav.Link>
                     <Nav.Link href="#link">Plans</Nav.Link>
                     <Nav.Link href="#link">How-To</Nav.Link>
                     {isLoggedin ?
