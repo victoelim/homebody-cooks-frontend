@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
+import {Link} from 'react-router-dom'
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
@@ -71,7 +72,7 @@ const Recipes = () => {
                                 <p>{vege.description}</p>
                             </Row>
                             <Row className="row-button">
-                                <button className="rounded-pill w-100">Choose your ingredient</button>
+                                <Link to ={`/recipes/${vege.id}/ingredients`}  className="button-link"><button className="rounded-pill w-100">Choose your ingredient</button></Link>
                             </Row>
                         </Col>
                     </Row>
@@ -100,7 +101,7 @@ const Recipes = () => {
                                 <p>{mix.description}</p>
                             </Row>
                             <Row className="row-button">
-                                <button className="rounded-pill w-100">Choose your ingredient</button>
+                                <Link to ={`/recipes/${mix.id}/ingredients`} className="button-link"><button className="rounded-pill w-100">Choose your ingredient</button></Link>
                             </Row>
                         </Col>
                     </Row>
