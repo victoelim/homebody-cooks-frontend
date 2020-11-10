@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import {Switch, Link, Route} from 'react-router-dom';
+import {Switch, Redirect, Route} from 'react-router-dom';
 import './App.css';
 import WebNavbar from './components/Navbar/Navbar';
 import LoggedInContext from '../src/containers/LoggedInContext';
@@ -12,6 +12,7 @@ import Homepage from './pages/Homepage/Hompage'
 import Recipes from './pages/Recipes/Recipes';
 import Ingredients from './pages/Ingredients/Ingredients';
 import Cart from './components/Cart/Cart'
+import UserProfile from '../src/pages/UserProfile/UserProfile';
 
 function App() {
   const [isOpen, setOpen] = useState(false);
@@ -29,6 +30,7 @@ function App() {
       <Route exact path="/"><Homepage/></Route>
       <Route path="/recipes/show"><Recipes/></Route>
       <Route path="/recipes/:id/ingredients"><Ingredients/></Route>
+      <Route path="/me">{isLoggedin ? <UserProfile/>: <Redirect to="/" />}</Route>
     </Switch>
     <Cart/>
     </LoggedInContext.Provider>
