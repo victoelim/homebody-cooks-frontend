@@ -15,11 +15,12 @@ import Ingredients from './pages/Ingredients/Ingredients';
 function App() {
   const [isOpen, setOpen] = useState(false);
   const [isLogin, setIsLogin] = useState(true);
+  const [isCart, setIsCart] = useState(true)
   const [isLoggedin, setIsLoggedin] = useState(localStorage.getItem('token'))
 
   return (
     <>
-    <LoggedInContext.Provider value = {{isOpen, setOpen, isLogin, setIsLogin, isLoggedin, setIsLoggedin}}>
+    <LoggedInContext.Provider value = {{isOpen, setOpen, isLogin, setIsLogin, isLoggedin, setIsLoggedin, isCart, setIsCart}}>
     <WebNavbar/>
     {isOpen ? <Modal /> : null}
     <ToastContainer/>

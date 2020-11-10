@@ -178,7 +178,7 @@ const LoginForm = ({isOpen, setOpen, setIsLogin, setIsLoggedin}) => {
                         
                     </div>
                     </form>
-                    <div className="button-div text-center mt-4">
+                    <div className="text-center mt-4">
                         
                         <button onClick = { () => signIn()} className="w-75 rounded-pill google-button">
                             <img src={google2}></img>
