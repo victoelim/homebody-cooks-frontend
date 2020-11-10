@@ -61,8 +61,8 @@ const WebNavbar = () => {
                 }
             </div> */}
 
-            <Navbar fixed = "top" expand="lg" className = "navigation-bar" variant = "dark">
-            <Navbar className = "title" href="#home">HomeBody Cooks</Navbar>
+            <Navbar expand="lg" className = "navigation-bar" variant = "dark">
+            <Navbar className = "title" href="#home"><Link to="/">HomeBody Cooks</Link></Navbar>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="ml-auto">
@@ -71,6 +71,7 @@ const WebNavbar = () => {
                     <Nav.Link href="#link">How-To</Nav.Link>
                     {isLoggedin ?
                         <div className='nav-button'>
+                            <Link to = "/me">Profile</Link>
                             <Link><button onClick={LogOut}>Log out</button></Link>
                         </div>
                         :

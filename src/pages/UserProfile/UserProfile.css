@@ -1,0 +1,80 @@
+.profileImg img {
+    height: 20vh;
+    width:auto;
+    border-radius: 50%;
+    border: 2px solid #0D1F2D;
+}
+
+.profileName h1{
+    font-weight: bolder;
+    font-size: 46px;
+}
+
+.formSection {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.formLayout {
+    width:50vw;
+}
+
+/* .UploadImageInput {
+    width:25vw;
+    height: 3vw;
+} */
+
+[type="file"] {
+    border: 0;
+    clip: rect(0, 0, 0, 0);
+    height: 1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute !important;
+    white-space: nowrap;
+    width: 1px;
+  }
+
+  [type="file"] + label {
+    background: #0D1F2D;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: 'Rubik', sans-serif;
+    font-size: inherit;
+    font-weight: bolder;
+    margin-bottom: 1rem;
+    outline: none;
+    padding: 1rem 50px;
+    position: relative;
+    transition: all 0.3s;
+    vertical-align: middle;
+  }
+
+  .button-upload {
+    background: #0D1F2D;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: 'Rubik', sans-serif;
+    font-size: inherit;
+    font-weight: bolder;
+    margin-bottom: 1rem;
+    outline: none;
+    padding: 1rem 50px;
+    position: relative;
+    transition: all 0.3s;
+    vertical-align: middle;
+  }
+  
+  .imagePreview img {
+    height: 30vh;
+    width:auto;
+    border: 2px solid #0D1F2D;
+  }
