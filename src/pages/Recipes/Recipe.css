@@ -47,10 +47,11 @@
     background-color: white;
     color:#EDB015;
     outline: none;
+    height: 50px;
 }
 
-.row-button{
-    height: 15%;
+.button-link {
+    width: 100%;
 }
 
 .row-description {
