@@ -141,12 +141,10 @@ const LoginForm = ({isOpen, setOpen, setIsLogin, setIsLoggedin}) => {
 
         return (
         <>
-            <Modal.Header style = {{
-                borderBottomWidth : 0
-            }} closeButton>
+            <Modal.Header className="modal-head" closeButton>
+                <h1 className="w-100 text-center p-0 pl-4 modal-title">Log In</h1>
             </Modal.Header>
             <Modal.Body>
-                    <h1 className="text-center">Log In</h1>
                     <Container fluid className = "mt-5">
                     <form onSubmit = {(e) => handleSubmit(e)}>
                     <Row>
