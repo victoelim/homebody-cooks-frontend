@@ -1,4 +1,5 @@
-import React, {useState} from 'react'
+import React, {useState,useEffect} from 'react';
+import axios from 'axios';
 import {Switch, Redirect, Route} from 'react-router-dom';
 import './App.css';
 import WebNavbar from './components/Navbar/Navbar';
@@ -15,11 +16,12 @@ import Cart from './components/Cart/Cart'
 import UserProfile from '../src/pages/UserProfile/UserProfile';
 import Transaction from './pages/Transactions/Transaction';
 import SubscriptionPlan from '../src/pages/subscriptionPlan/SubsccriptionPlan';
+import ChangePlan from '../src/pages/changePlan/changePlan';
 
 function App() {
   const [isOpen, setOpen] = useState(false);
   const [isLogin, setIsLogin] = useState(true);
-  const [isCart, setIsCart] = useState(false)
+  const [isCart, setIsCart] = useState(false);
   const [isLoggedin, setIsLoggedin] = useState(localStorage.getItem('token'))
 
   return (
@@ -33,8 +35,8 @@ function App() {
       <Route path="/recipes/show"><Recipes/></Route>
       <Route path="/recipes/:id/ingredients"><Ingredients/></Route>
       <Route path="/me">{isLoggedin ? <UserProfile/>: <Redirect to="/" />}</Route>
+      <Route path="/plans">{isLoggedin ? <ChangePlan/> : <SubscriptionPlan/>}</Route>
       <Route path="/:id/transactions"><Transaction/></Route>
-      <Route path="/plans"><SubscriptionPlan/></Route>
     </Switch>
     <Cart/>
     </LoggedInContext.Provider>
