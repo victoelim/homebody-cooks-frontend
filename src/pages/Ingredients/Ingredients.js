@@ -80,16 +80,16 @@ const Ingredients = () => {
     
     
     return (
-        <Container>
+        <Container className="ingredients">
             {recipe.length ?
             <div>
             <Row className="justify-content-center mt-5">
-                <Col sm={9}>
+                <Col sm={9} md = {11}>
                     <h1>{recipe[0].recipe_name}</h1>
                 </Col>
             </Row>
             <Row className="justify-content-center mt-3">
-                <Col sm={9}>
+                <Col sm={9} md = {11}>
                     <p className="description">{recipe[0].description}</p>
                 </Col>
             </Row>

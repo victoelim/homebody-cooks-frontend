@@ -9,16 +9,18 @@ import LoggedInContext from "../../containers/LoggedInContext"
 
 
 const WebNavbar = () => {
-    const {isOpen, setOpen, isLogin, setIsLogin, isLoggedin, setIsLoggedin} = useContext(LoggedInContext)
+    const {isOpen, setOpen, isLogin, setIsLogin, isLoggedin, setIsLoggedin, setIsCart} = useContext(LoggedInContext)
 
     const LoginHandleClick = () => {
         setOpen(true)
         setIsLogin(true)
+        setIsCart(false)
     }
 
     const SignupHandleClick = () => {
         setOpen(true)
         setIsLogin(false)
+        setIsCart(false)
     }
 
     const LogOut = () => {

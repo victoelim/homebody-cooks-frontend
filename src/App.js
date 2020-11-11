@@ -11,13 +11,14 @@ import 'react-toastify/dist/ReactToastify.css';
 import Homepage from './pages/Homepage/Hompage'
 import Recipes from './pages/Recipes/Recipes';
 import Ingredients from './pages/Ingredients/Ingredients';
+import Cart from './components/Cart/Cart'
 import UserProfile from '../src/pages/UserProfile/UserProfile';
 import SubscriptionPlan from '../src/pages/subscriptionPlan/SubsccriptionPlan';
 
 function App() {
   const [isOpen, setOpen] = useState(false);
   const [isLogin, setIsLogin] = useState(true);
-  const [isCart, setIsCart] = useState(true)
+  const [isCart, setIsCart] = useState(false)
   const [isLoggedin, setIsLoggedin] = useState(localStorage.getItem('token'))
 
   return (
@@ -33,6 +34,7 @@ function App() {
       <Route path="/me">{isLoggedin ? <UserProfile/>: <Redirect to="/" />}</Route>
       <Route path="/plans"><SubscriptionPlan/></Route>
     </Switch>
+    <Cart/>
     </LoggedInContext.Provider>
     
     </>
