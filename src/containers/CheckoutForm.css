@@ -39,3 +39,7 @@
     cursor: pointer;
     position: relative;
 }
+
+.description-cart {
+    font-size: smaller;
+}

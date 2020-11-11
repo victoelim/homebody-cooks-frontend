@@ -9,21 +9,35 @@ import "./Recipe.css"
 const Recipes = () => {
     const [isVege, setVege] = useState('')
     const [vegeRecipes, updateVegeRecipes] = useState([]);
+    const [mixRecipes, updateMixRecipes] = useState([]);
+    const [recipes, updateRecipes] = useState([])
     useEffect(() => {
         axios.get('https://homebody-cooks.herokuapp.com/api/v1/recipes/vegetarian')
         .then(function(response){
             updateVegeRecipes(response.data)
             
         })
-    }, [])
-
-    const [mixRecipes, updateMixRecipes] = useState([]);
-    useEffect(() => {
         axios.get('https://homebody-cooks.herokuapp.com/api/v1/recipes/mix')
         .then(function(response){
             updateMixRecipes(response.data)
         })
+        axios.get(`https://homebody-cooks.herokuapp.com/api/v1/subscription_recipes/me/today`, {
+            headers: {
+                "Authorization": "Bearer " +  localStorage.getItem('token')
+            }
+        
+        })
+        .then(function(response){
+            updateRecipes(response.data.recipe)
+            
+        })
     }, [])
+
+    const checkCart = (e) => { 
+        let result = recipes.includes(e)? true : false
+        return result
+
+    }
 
     const handleVege = () => setVege(true)
     const handleMix = () => setVege(false)
@@ -72,7 +86,8 @@ const Recipes = () => {
                                 <p>{vege.description}</p>
                             </Row>
                             <Row className="row-button">
-                                <Link to ={`/recipes/${vege.id}/ingredients`}  className="button-link"><button className="rounded-pill w-100">Choose your ingredient</button></Link>
+
+                                <Link to={`/recipes/${vege.id}/ingredients`}  className="button-link"><button className="rounded-pill w-100">Choose your ingredient</button></Link>
                             </Row>
                         </Col>
                     </Row>

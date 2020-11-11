@@ -13,7 +13,7 @@ const Modals = () => {
     return (
         <>
         <Modal show={isOpen} onHide={handleClose}>
-        {isCart ? <CheckoutForm/> : isLogin ? <LoginForm setOpen = {setOpen} setIsLogin = {setIsLogin} setIsLoggedin = {setIsLoggedin}/> : <SignUpForm setOpen = {setOpen} setIsLogin = {setIsLogin} setIsLoggedin = {setIsLoggedin}/> }
+        {isCart ? <CheckoutForm setOpen = {setOpen}/> : isLogin ? <LoginForm setOpen = {setOpen} setIsLogin = {setIsLogin} setIsLoggedin = {setIsLoggedin}/> : <SignUpForm setOpen = {setOpen} setIsLogin = {setIsLogin} setIsLoggedin = {setIsLoggedin}/> }
         </Modal>
         </>
     );

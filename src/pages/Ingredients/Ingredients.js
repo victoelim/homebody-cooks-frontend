@@ -61,8 +61,8 @@ const Ingredients = () => {
             
         })
         .then(response => {
-            console.log(response)
-            toast.success("Successfully added to cart", {
+            console.log(response.data.message)
+            toast.success(response.data.message, {
                 position: "top-right",
                 autoClose: 5000,
                 hideProgressBar: false,
