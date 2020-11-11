@@ -5,6 +5,7 @@ import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import axios from 'axios';
 import {toast} from 'react-toastify';
+import Spinner from 'react-bootstrap/Spinner';
 
 const UserProfile = () => {
     const [userData, updateUserData] = useState([])
@@ -101,82 +102,94 @@ const UserProfile = () => {
         }
     return (
         <>
-            <Container>
-                <Row>
-                    <Col sm = {6} className = "profileImg d-flex justify-content-end my-5 align-items-center">
-                        <img src={profileImg.profile_image_path} alt = "profile image"/>
-                    </Col>
-                    <Col sm = {6} className = "profileName d-flex align-items-center my-5">
-                        <h1>{userData.name}</h1>
-                    </Col>
-                </Row>
-            </Container>
-            <hr></hr>
-            <Container className = "formSection">
-                <h1 className = "my-5">Update Profile</h1>
-                <form onSubmit = {(e) => handleSubmit(e)}>
-                <Row className = "formLayout">
-                    <Col xs = {5}>
-                        <label for="user_name">Name :</label>
-                    </Col>
-                    <Col>
-                        <input className= "rounded-pill w-100 input bg-light" type="text" id="user_name" onChange = {(e) => setName(e.target.value)}  defaultValue = {userData.name} ></input>
-                    </Col>
-                </Row>
-                <br></br>
-                <Row className = "formLayout">
-                    <Col xs ={5}>
-                        <label for="email">Email :</label>
-                    </Col>
-                    <Col>
-                        <input className= "rounded-pill w-100 input bg-light" type='text' id='email' onChange = {(e) => updateEmail(e.target.value)} defaultValue = {userData.email}/>
-                    </Col>
-                </Row>
-                <br></br>
-                <Row className = "formLayout">
-                    <Col xs ={5}>
-                        <label for="password">Password :</label>
-                    </Col>
-                    <Col>
-                        <input className= "rounded-pill w-100 input bg-light" type='password' id='password' onChange = {(e) => updatePassword(e.target.value)} value = {password}/>
-                    </Col>
-                </Row>
-                <br></br>
-                <Row className = "formLayout">
-                    <Col xs ={5}>
-                        <label for="confirmPassword">Current Password :</label>
-                    </Col>
-                    <Col>
-                        <input className= "rounded-pill w-100 input bg-light" type='password' id='oldPassword' onChange = {(e) => setOld_Password(e.target.value)} value = {old_password}/>
-                    </Col>
-                </Row>
-                <br></br>
+            {userData ?
+            <>
+                <Container>
+                    <Row>
+                        <Col sm = {6} className = "profileImg d-flex justify-content-end my-5 align-items-center">
+                            <img src={profileImg.profile_image_path} alt = "profile image"/>
+                        </Col>
+                        <Col sm = {6} className = "profileName d-flex align-items-center my-5">
+                            <h1>{userData.name}</h1>
+                        </Col>
+                    </Row>
+                </Container>
+                <hr></hr>
+                <Container className = "formSection">
+                    <h1 className = "my-5">Update Profile</h1>
+                    <form onSubmit = {(e) => handleSubmit(e)}>
+                    <Row className = "formLayout">
+                        <Col xs = {5}>
+                            <label for="user_name">Name :</label>
+                        </Col>
+                        <Col>
+                            <input className= "rounded-pill w-100 input bg-light" type="text" id="user_name" onChange = {(e) => setName(e.target.value)}  defaultValue = {userData.name} ></input>
+                        </Col>
+                    </Row>
+                    <br></br>
+                    <Row className = "formLayout">
+                        <Col xs ={5}>
+                            <label for="email">Email :</label>
+                        </Col>
+                        <Col>
+                            <input className= "rounded-pill w-100 input bg-light" type='text' id='email' onChange = {(e) => updateEmail(e.target.value)} defaultValue = {userData.email}/>
+                        </Col>
+                    </Row>
+                    <br></br>
+                    <Row className = "formLayout">
+                        <Col xs ={5}>
+                            <label for="password">Password :</label>
+                        </Col>
+                        <Col>
+                            <input className= "rounded-pill w-100 input bg-light" type='password' id='password' onChange = {(e) => updatePassword(e.target.value)} value = {password}/>
+                        </Col>
+                    </Row>
+                    <br></br>
+                    <Row className = "formLayout">
+                        <Col xs ={5}>
+                            <label for="confirmPassword">Current Password :</label>
+                        </Col>
+                        <Col>
+                            <input className= "rounded-pill w-100 input bg-light" type='password' id='oldPassword' onChange = {(e) => setOld_Password(e.target.value)} value = {old_password}/>
+                        </Col>
+                    </Row>
+                    <br></br>
 
-                <div className="button-div text-center mt-4">
-                    <button type="submit" className="w-25 rounded-pill">Update</button>
-                </div>
-                </form>
-            </Container>
-            <Container className = "mt-5">
-                <Row >
-                    <Col sm = {6} className = "d-flex justify-content-center align-items-center">
-                    <form onSubmit = {handleUpload}>
-                        <input id = "uploadimg" className = "UploadImageInput" type="file" onChange = {handleSubmitImage}/>
-                        <label for="uploadimg">Choose a file</label>
-                        <button type = "submit" className="button-upload ml-5">Upload</button>
+                    <div className="button-div text-center mt-4">
+                        <button type="submit" className="w-25 rounded-pill">Update</button>
+                    </div>
                     </form>
-                    </Col>
-                    <Col sm ={6} className = "imagePreview mb-5">
-                        {previewImage ? (
-                        <img src={previewImage} width="40%" />
-                        ) : (
-                        <h3  className="text-center">
-                        {message ? message : "Live Preview"}
-                        </h3>
-                        )}
-                    </Col>
-                </Row>
-            </Container>
+                </Container>
+                <Container className = "mt-5">
+                    <Row >
+                        <Col sm = {6} className = "d-flex justify-content-center align-items-center">
+                        <form onSubmit = {handleUpload}>
+                            <input id = "uploadimg" className = "UploadImageInput" type="file" onChange = {handleSubmitImage}/>
+                            <label for="uploadimg">Choose a file</label>
+                            <button type = "submit" className="button-upload ml-5">Upload</button>
+                        </form>
+                        </Col>
+                        <Col sm ={6} className = "imagePreview mb-5">
+                            {previewImage ? (
+                            <img src={previewImage} width="40%" />
+                            ) : (
+                            <h3  className="text-center">
+                            {message ? message : "Live Preview"}
+                            </h3>
+                            )}
+                        </Col>
+                    </Row>
+                </Container> 
+                </>
+                :
+
+                <div className="d-flex justify-content-center loading-head">
+                <Spinner animation="border" role="status" className="loading-div">
+                    <span className="sr-only">Loading...</span>
+                </Spinner>
+                </div>
+            
+        }
         </>
     )
 }

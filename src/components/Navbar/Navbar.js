@@ -39,7 +39,7 @@ const WebNavbar = () => {
     return (
         <>
             <Navbar expand="lg" className = "navigation-bar" variant = "dark">
-            <Navbar  href="#home"><Link className = "title" to="/">HomeBody Cooks</Link></Navbar>
+            <Navbar  href="#home"><Link className = "title m-0" to="/">HomeBody Cooks</Link></Navbar>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="ml-auto align-items-center">

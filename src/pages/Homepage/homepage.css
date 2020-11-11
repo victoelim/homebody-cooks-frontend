@@ -41,7 +41,7 @@
 }
 
 .cta-img {
-    width: 35%;
+    width: 28%;
     height: auto;
     margin: 0;
 }
@@ -53,6 +53,7 @@
     background-color: #0D1F2D;
     color: white;
     text-align: center;
+    box-shadow: 5px 10px #888888;
 }
 
 .footer {
@@ -82,4 +83,8 @@
     font-weight: bolder;
     color: white;
     text-align: center;
+}
+
+p {
+    line-height: 150%;
 }

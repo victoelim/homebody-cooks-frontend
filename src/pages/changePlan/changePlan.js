@@ -1,19 +1,18 @@
-import React, {useState, useEffect, useContext} from 'react';
+import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
-import '../subscriptionPlan/SubscriptionPlan.css';
+import '../changePlan/changePlan.css';
 import DeliciousMeals from "../../images/DeliciousMeals.png";
 import {Link, Redirect} from 'react-router-dom';
-import LoggedInContext from "../../containers/LoggedInContext";
+import Spinner from 'react-bootstrap/Spinner';
 
-const SubscriptionPlan = () => {
-    const {isLoggedin} = useContext(LoggedInContext)
+const ChangePlan = () => {
     const [plan, setPlan] = useState([])
-    
+    const [subscribtion, setSubscription] = useState()
     
     useEffect(() => {
         axios.get (`https://homebody-cooks.herokuapp.com/api/v1/subscriptions/`)
@@ -21,11 +20,24 @@ const SubscriptionPlan = () => {
         console.log(response.data)
         setPlan(response.data)
     })
+    
+        axios.get(`https://homebody-cooks.herokuapp.com/api/v1/users/me`, {
+            headers: {
+                        Authorization: "Bearer " + localStorage.getItem('token')
+            }
+        })
+        .then (function(response){
+            console.log(response.data.subscription_id);
+            setSubscription(response.data.subscription_id);
+            console.log(subscribtion)
+            
+        })
     },[])
 
     return (
         <>
             <Container>
+            { subscribtion ?
                 <Row className = " rowCard d-flex justify-content-center align-items-center mx-0">
                     {plan.map((p) => {
                         return (
@@ -40,16 +52,24 @@ const SubscriptionPlan = () => {
                                         <Card.Text className = "cardText">
                                         RM {p.price}
                                         </Card.Text>
-                                        <Link to = {`/${p.id}/transactions`}><Button className = "orderButton rounded-pill w-50">Choose Plan</Button></Link>
+                                        {console.log(subscribtion)}
+                                        <Link to = {`/${p.id}/transactions`}>{subscribtion !== "undefined" ? <Button className = "orderButton rounded-pill w-50">Update Plan</Button> : <Button className = "orderButton rounded-pill w-50">Choose Plan</Button>}</Link>
                                     </Card.Body>
                                 </Card>
                             </Col>
                     )})}
                 </Row>
+                : 
+            <div className="d-flex justify-content-center loading-head">
+            <Spinner animation="border" role="status" className="loading-div">
+                <span className="sr-only">Loading...</span>
+            </Spinner>
+            </div>
+             }
             </Container>
         
         </>
     )
 }
 
-export default SubscriptionPlan;
+export default ChangePlan;
