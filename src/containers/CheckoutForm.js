@@ -27,7 +27,7 @@ const Checkout = () => {
                 setRecipe(x.recipe)
             }
         })
-    })
+    },[])
     
     const handleSubmit = event => {
         event.preventDefault();
@@ -72,6 +72,7 @@ const Checkout = () => {
         })
         .then(response => {
             console.log(response.data)
+            updateRecipes([])
             toast.success("Successfully ordered", {
                 position: "top-right",
                 autoClose: 5000,
@@ -81,6 +82,7 @@ const Checkout = () => {
                 draggable: true,
                 progress: undefined,
             })
+            
         })
         .catch(error => {
             console.error(error.response) // so that we know what went wrong if the request failed
