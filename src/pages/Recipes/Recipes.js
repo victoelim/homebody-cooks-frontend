@@ -59,12 +59,12 @@ const Recipes = () => {
             {vegeRecipes.map((vege) => {
                 return (
             
-                <Col sm = {6}>
-                    <Row>
-                        <Col sm = {5}>
+                <Col sm = {12} md={6} lg={6}>
+                    <Row className="mb-5">
+                        <Col lg = {6} md={6} sm={12}  >
                             <img className="recipe-img" src={vege.image_url}/>
                         </Col>
-                        <Col sm = {7}>
+                        <Col sm = {12} md ={6} lg={6}>
                             <Row className="row-name">
                                 <p className="recipe-name">{vege.recipe_name}</p>
                             </Row>
@@ -88,12 +88,12 @@ const Recipes = () => {
             {mixRecipes.map((mix) => {
                 return (
             
-                <Col sm = {6}>
+                <Col sm = {12} md={6} lg={6}>
                     <Row>
-                        <Col sm = {5}>
+                        <Col sm = {12} md={6} lg={6}>
                             <img className="recipe-img" src={mix.image_url}/>
                         </Col>
-                        <Col sm = {7}>
+                        <Col sm = {12} md={6} lg={6}>
                             <Row className="row-name">
                                 <p className="recipe-name">{mix.recipe_name}</p>
                             </Row>

@@ -14,6 +14,7 @@ import Recipes from './pages/Recipes/Recipes';
 import Ingredients from './pages/Ingredients/Ingredients';
 import Cart from './components/Cart/Cart'
 import UserProfile from '../src/pages/UserProfile/UserProfile';
+import Transaction from './pages/Transactions/Transaction';
 import SubscriptionPlan from '../src/pages/subscriptionPlan/SubsccriptionPlan';
 import ChangePlan from '../src/pages/changePlan/changePlan';
 
@@ -34,7 +35,12 @@ function App() {
       <Route path="/recipes/show"><Recipes/></Route>
       <Route path="/recipes/:id/ingredients"><Ingredients/></Route>
       <Route path="/me">{isLoggedin ? <UserProfile/>: <Redirect to="/" />}</Route>
+<<<<<<< HEAD
       <Route path="/plans">{isLoggedin ? <ChangePlan/> : <SubscriptionPlan/>}</Route>
+=======
+      <Route path="/:id/transactions"><Transaction/></Route>
+      <Route path="/plans"><SubscriptionPlan/></Route>
+>>>>>>> 786b2a5b553b0974465b414b52bf141187e1c1d6
     </Switch>
     <Cart/>
     </LoggedInContext.Provider>
