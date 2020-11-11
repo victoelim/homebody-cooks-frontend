@@ -8,10 +8,11 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import Deliver from "../../images/deliver.png";
-import LoggedInContext from "../../containers/LoggedInContext"
+import LoggedInContext from "../../containers/LoggedInContext";
+import {Link, Redirect} from 'react-router-dom';
 
 const Homepage = () => {
-    const {setOpen, setIsLogin, setIsCart} = useContext(LoggedInContext)
+    const {setOpen, setIsLogin, setIsCart, isLoggedin} = useContext(LoggedInContext)
     const SignupHandleClick = () => {
         setOpen(true)
         setIsLogin(false)
@@ -28,7 +29,7 @@ const Homepage = () => {
                             <h2>Don't stress Over Your Meals,</h2>
                             <h2>We'll Take Care of It.</h2>
                             <span>Fresh Ingredients Delivered to Your Doorstep.</span>
-                            <button onClick = {SignupHandleClick}>Join Today</button>
+                            {isLoggedin ? <Link to = "/recipes/show"><button>Order Meals</button></Link> : <button onClick = {SignupHandleClick}>Join Today</button>}
                         </div>
                     </Col>
                 </Row>
@@ -73,7 +74,7 @@ const Homepage = () => {
                     <Col sd = {12} className = "p-0 my-5 d-flex flex-column align-items-center">
                         <h4>Meal Plans Start from RM 88</h4>
                         <p>No commitment. Cancel at anytime.</p>
-                        <button className="cta-button" onClick = {SignupHandleClick}>Join Today</button>
+                        {isLoggedin ? <Link to = "/recipes/show"><button className = "cta-button">Order Meals</button></Link> : <button className = "cta-button" onClick = {SignupHandleClick}>Join Today</button>}
                     </Col>
                 </Row>
             </Container>
