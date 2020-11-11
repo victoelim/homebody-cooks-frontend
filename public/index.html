@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+    <script src="https://js.braintreegateway.com/web/dropin/1.25.0/js/dropin.min.js"></script>
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
@@ -16,6 +17,7 @@
     -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <script src="https://use.fontawesome.com/f3d7741e3a.js"></script>
+    
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -40,5 +42,28 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    <script type="text/javascript">
+      const form = document.getElementById('payment-form');
+  
+      braintree.dropin.create({
+      authorization: "{{client_token}}",
+      container: document.getElementById('dropin-container'),
+    
+      }, (error, dropinInstance) => {
+      if (error) console.error(error);
+  
+    form.addEventListener('submit', event => {
+      event.preventDefault();
+  
+      dropinInstance.requestPaymentMethod((error, payload) => {
+        if (error) console.error(error);
+  
+        document.getElementById('nonce').value = payload.nonce;
+        form.submit();
+    
+      });
+    });
+  });
+  </script>
   </body>
 </html>

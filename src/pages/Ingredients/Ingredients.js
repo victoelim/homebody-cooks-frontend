@@ -84,17 +84,17 @@ const Ingredients = () => {
             {recipe.length ?
             <div>
             <Row className="justify-content-center mt-5">
-                <Col sm={9} md = {11}>
+                <Col sm={12} md = {9}>
                     <h1>{recipe[0].recipe_name}</h1>
                 </Col>
             </Row>
             <Row className="justify-content-center mt-3">
-                <Col sm={9} md = {11}>
+                <Col sm={12} md = {9}>
                     <p className="description">{recipe[0].description}</p>
                 </Col>
             </Row>
             <Row className="justify-content-center row-ingredient mt-4">
-                <Col sm = {4}>
+                <Col sm = {12} md={4}>
                     <form onSubmit={(e) => handleSubmit(e)}>
                         {ingredients.map((ingredient) => {
                             return (
@@ -106,10 +106,10 @@ const Ingredients = () => {
                                 </>
                             )
                         })}
-                        <button type="submit" className="cart-button w-100 rounded-pill">Add to Cart</button>
+                        <button type="submit" className="cart-button w-100 rounded-pill mb-5">Add to Cart</button>
                     </form>
                 </Col>
-                <Col sm={5} className="pl-0">
+                <Col sm={12} md={5} className="pl-0">
                     <img className="w-100 recipe-image rounded-circle" src={recipe[0].image_url}></img>
                 </Col>
             </Row>
