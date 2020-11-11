@@ -9,6 +9,7 @@ import Container from 'react-bootstrap/Container';
 import "./LoginForm.css";
 import {useGoogleLogin} from 'react-google-login'
 import google2 from '../images/google2.png'
+import RefreshTokenSetup from '../utils/refreshToken';
 
 const LoginForm = ({isOpen, setOpen, setIsLogin, setIsLoggedin}) => {
     const [user_email, setEmail] = useState('');
@@ -61,6 +62,8 @@ const LoginForm = ({isOpen, setOpen, setIsLogin, setIsLoggedin}) => {
           });
       })
       console.log(response.profileObj.email);
+      setOpen(false)
+      RefreshTokenSetup(response)
     }
     
     const onFailure = (response) => {

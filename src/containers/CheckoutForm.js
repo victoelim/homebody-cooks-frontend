@@ -11,10 +11,11 @@ import { useParams } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTimes } from '@fortawesome/free-solid-svg-icons'
 
-const Checkout = () => {
+const Checkout = ({setOpen}) => {
     const [recipes, updateRecipes] = useState([])
     const [recipe, setRecipe] = useState('')
     useEffect(() => {
+        console.log("123")
         axios.get(`https://homebody-cooks.herokuapp.com/api/v1/subscription_recipes/me/today`, {
             headers: {
                 "Authorization": "Bearer " +  localStorage.getItem('token')
@@ -47,6 +48,10 @@ const Checkout = () => {
                 draggable: true,
                 progress: undefined,
             })
+            const updated = recipes.filter(item => item.recipe != recipe)
+            updateRecipes(updated)
+            
+
         })
         .catch(error => {
             console.error(error.response) // so that we know what went wrong if the request failed
@@ -82,6 +87,7 @@ const Checkout = () => {
                 draggable: true,
                 progress: undefined,
             })
+            setOpen(false)
             
         })
         .catch(error => {
@@ -115,9 +121,10 @@ const Checkout = () => {
                                 </Col>
                                 <Col className="name" sm={5}>
                                     <p>{recipe.recipe_name}</p>
+                                    <p className= "description-cart">{recipe.recipe_description}</p>
                                 </Col>
                                 <Col sm={3}>
-                                    <form className="delete_recipe" onSubmit={(e) => handleSubmit(e)}>
+                                    <form className="delete_recipe">
                                         <FontAwesomeIcon icon={faTimes} onClick={(e) => handleSubmit(e)} className="delete-button"/>
                                     </form>
                                 </Col>
