@@ -38,42 +38,17 @@ const WebNavbar = () => {
     }
     return (
         <>
-            {/* <div className='navigation-bar'>
-                <div className='title'>
-                    <h1>HomeBody Cooks</h1>
-                </div>
-                <div className='nav-links'>
-                    <Link to ="/recipes/show"><a>Meals</a></Link>
-                </div>
-                <div className='nav-links'>
-                    <a href="#">Price</a>
-                </div>
-                <div className='nav-links'>
-                    <a href="#">How-To</a>
-                </div>
-                {isLoggedin ?
-                <div className='nav-button'>
-                    <Link><button onClick={LogOut}>Log out</button></Link>
-                </div>
-                :
-                <div className='nav-button'>
-                    <Link><button onClick={LoginHandleClick}>Log In</button></Link>
-                    <Link><button onClick={SignupHandleClick}>Sign Up</button></Link>
-                </div>
-                }
-            </div> */}
-
             <Navbar expand="lg" className = "navigation-bar" variant = "dark">
-            <Navbar className = "title" href="#home"><Link to="/">HomeBody Cooks</Link></Navbar>
+            <Navbar  href="#home"><Link className = "title" to="/">HomeBody Cooks</Link></Navbar>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
-                <Nav className="ml-auto">
-                    <Nav.Link href="/recipes/show">Meals</Nav.Link>
-                    <Nav.Link href="#link">Plans</Nav.Link>
-                    <Nav.Link href="#link">How-To</Nav.Link>
+                <Nav className="ml-auto align-items-center">
+                    <Link className ="reactLink" to = "/recipes/show">Meals</Link>
+                    <Link className ="reactLink" to = "/plans">Plans</Link>
+                    <Link className ="reactLink" href="#link">How-To</Link>
                     {isLoggedin ?
                         <div className='nav-button'>
-                            <Link to = "/me">Profile</Link>
+                            <Link className ="reactLink"to = "/me">Profile</Link>
                             <Link><button onClick={LogOut}>Log out</button></Link>
                         </div>
                         :

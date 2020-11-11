@@ -13,6 +13,7 @@ import Recipes from './pages/Recipes/Recipes';
 import Ingredients from './pages/Ingredients/Ingredients';
 import Cart from './components/Cart/Cart'
 import UserProfile from '../src/pages/UserProfile/UserProfile';
+import SubscriptionPlan from '../src/pages/subscriptionPlan/SubsccriptionPlan';
 
 function App() {
   const [isOpen, setOpen] = useState(false);
@@ -31,6 +32,7 @@ function App() {
       <Route path="/recipes/show"><Recipes/></Route>
       <Route path="/recipes/:id/ingredients"><Ingredients/></Route>
       <Route path="/me">{isLoggedin ? <UserProfile/>: <Redirect to="/" />}</Route>
+      <Route path="/plans"><SubscriptionPlan/></Route>
     </Switch>
     <Cart/>
     </LoggedInContext.Provider>
