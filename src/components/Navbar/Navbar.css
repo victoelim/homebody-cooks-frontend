@@ -14,7 +14,7 @@
 
 .navigation-bar a {
     color: white;
-    margin-right: 50px;
+    margin-left: 50px;
 }
 
 .navigation-bar :last-child {
@@ -54,6 +54,11 @@
     color: white;
 }
 
+.title:hover {
+    text-decoration: none;
+    color: #0D1F2D;
+}
+
  a {
     color: white;
     text-decoration: none;
@@ -63,4 +68,13 @@
 a:hover {
     color: white;
     text-decoration: none;
+}
+
+.reactLink {
+    font-weight: bolder;
+}
+
+.reactLink:hover {
+    text-decoration: none;
+    color: #0D1F2D;
 }
