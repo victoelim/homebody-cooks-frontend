@@ -23,8 +23,8 @@ const SignUpForm = ({setOpen, setIsLogin, setIsLoggedin}) => {
             password,
         })
         .then(response => {
-            localStorage.setItem('token', response.data.auth_token)
-            console.log (response.data.auth_token)
+            localStorage.setItem('token', response.data.token)
+            console.log (response.data.token)
             setIsLoggedin(true)
             toast.success("You're signed up", {
               position: "top-right",
