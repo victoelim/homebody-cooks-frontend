@@ -94,23 +94,32 @@ const Ingredients = () => {
                 </Col>
             </Row>
             <Row className="justify-content-center row-ingredient mt-4">
-                <Col sm = {12} md={9} lg= {4}>
+                <Col sm = {12} md={12} lg= {9}>
                     <form onSubmit={(e) => handleSubmit(e)}>
+                    <Row>
+                        <Col sm = {12} md={12} lg= {5}>
                         {ingredients.map((ingredient) => {
                             return (
                                 <>
+                                
+                                
                                 <div className="mb-2">
                                     <input type="checkbox" defaultChecked="true" name="ingredients" id="ingredient" onChange = {() => handleIngredients(ingredient.ingredient_id)} value={ingredient.ingredient_id}/>
                                     <label className="ml-3" for="ingredient">{ingredient.ingredient_name}</label>
                                 </div>
+                                
                                 </>
                             )
                         })}
-                        <button type="submit" className="cart-button w-100 rounded-pill mb-5">Add to Cart</button>
+                        </Col>
+                        <Col sm = {12} md={12} lg= {7}>
+                            <img className="w-100 recipe-image rounded-circle mb-5" src={recipe[0].image_url}></img>
+                            <button type="submit" className="cart-button w-100 rounded-pill mb-5 mt-2">Add to Cart</button>
+                        </Col>
+                        
+                    </Row>
                     </form>
-                </Col>
-                <Col sm={12} md={10} lg={5} className="pl-0">
-                    <img className="w-100 recipe-image rounded-circle" src={recipe[0].image_url}></img>
+                    
                 </Col>
             </Row>
             </div>
