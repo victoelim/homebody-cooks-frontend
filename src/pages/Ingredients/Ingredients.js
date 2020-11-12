@@ -10,10 +10,16 @@ import LoggedInContext from "../../containers/LoggedInContext"
 import './Ingredients.css'
 
 const Ingredients = () => {
+    const {setOpen, setIsLogin, setIsCart, isLoggedin} = useContext(LoggedInContext)
     let {id} = useParams()
     const [ingredients, updateIngredients] = useState([]);
     const [selectedIngredients, setSelectedIngredients] = useState([])
     const [recipe, updateRecipe] = useState([])
+    const SignupHandleClick = () => {
+        setOpen(true)
+        setIsLogin(false)
+        setIsCart(false)
+    }
     useEffect(() => {
         console.log('call useeffect ', id)
         axios.get(`https://homebody-cooks.herokuapp.com/api/v1/recipe_ingredients/${id}`)
@@ -75,6 +81,7 @@ const Ingredients = () => {
         .catch(error => {
             console.log(error.response)
         })
+
         
     }
     
@@ -114,7 +121,7 @@ const Ingredients = () => {
                         </Col>
                         <Col sm = {12} md={12} lg= {7}>
                             <img className="w-100 recipe-image rounded-circle mb-5" src={recipe[0].image_url}></img>
-                            <button type="submit" className="cart-button w-100 rounded-pill mb-5 mt-2">Add to Cart</button>
+                            {isLoggedin ? <button type="submit" className="cart-button w-100 rounded-pill mb-5 mt-2">Add to Cart</button> : <button onClick ={SignupHandleClick} className="cart-button w-100 rounded-pill mb-5 mt-2">Add to Cart</button>}
                         </Col>
                         
                     </Row>

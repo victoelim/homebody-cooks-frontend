@@ -26,6 +26,7 @@ const UserProfile = () => {
         .then (function(response){
             updateUserData(response.data);
             console.log(response.data);
+            console.log(Object.keys(response.data).length)
         })
     },[])
     useEffect (()=> {
@@ -36,7 +37,7 @@ const UserProfile = () => {
         })
         .then (function(response){
             setProfileImg(response.data);
-            console.log(response.data);;
+            console.log(response.data);
         })
     }, [])
 
@@ -64,6 +65,7 @@ const UserProfile = () => {
                     draggable: true,
                     progress: undefined,
                     });
+                window.location.reload()
             })
         }
     }
@@ -73,6 +75,7 @@ const UserProfile = () => {
     }
     const handleUpload = (e) => {
         e.preventDefault()
+        console.log(e)
         let formData = new FormData();
         formData.append("profile_image", imageFile)
         axios.post(`https://homebody-cooks.herokuapp.com/api/v1/users/images`, formData, {
@@ -100,9 +103,15 @@ const UserProfile = () => {
             setPreviewImage(null)
             setImageFile(null)
         }
+
+    const clearPreview = () => {
+        setPreviewImage(null)
+        setImageFile(null)
+    }
+    
     return (
         <>
-            {userData ?
+            {Object.keys(userData).length ?
             <>
                 <Container>
                     <Row>
@@ -166,12 +175,15 @@ const UserProfile = () => {
                         <form onSubmit = {handleUpload}>
                             <input id = "uploadimg" className = "UploadImageInput" type="file" onChange = {handleSubmitImage}/>
                             <label for="uploadimg">Choose a file</label>
-                            <button type = "submit" className="button-upload ml-5">Upload</button>
+                            {imageFile ? <button type = "submit" className="button-upload ml-5">Upload</button> :<button className="button-upload-disabled ml-5" disabled>Upload</button>}
                         </form>
                         </Col>
                         <Col sm ={6} className = "imagePreview mb-5">
                             {previewImage ? (
+                            <div>
                             <img src={previewImage} width="40%" />
+                            {previewImage ? <button onClick = {clearPreview} className="button-upload ml-5">Clear</button> :''}
+                            </div>
                             ) : (
                             <h3  className="text-center">
                             {message ? message : "Live Preview"}
@@ -180,7 +192,7 @@ const UserProfile = () => {
                         </Col>
                     </Row>
                 </Container> 
-                </>
+            </>
                 :
 
                 <div className="d-flex justify-content-center loading-head">
