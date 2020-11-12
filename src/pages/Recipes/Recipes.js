@@ -48,19 +48,19 @@ const Recipes = () => {
         {isVege ?
             <Row className="links justify-content-around">
                 
-                <Col sm ={5} className="link text-center" onClick = { () => handleMix()}>
+                <Col sm ={12} md={10} lg={5} className="link text-center" onClick = { () => handleMix()}>
                     <a>Mix</a>
                 </Col>
-                <Col sm ={5} className="link-chosen text-center" onClick = { () => handleVege()}>
+                <Col sm ={12} md={10} lg={5}  className="link-chosen text-center" onClick = { () => handleVege()}>
                     <a>Vegetarian</a>
                 </Col>
             </Row>
                 :
             <Row className="links justify-content-around">    
-                <Col sm ={5} className="link-chosen text-center" onClick = { () => handleMix()}>
+                <Col sm ={12} md={10} lg={5} className="link-chosen text-center" onClick = { () => handleMix()}>
                     <a>Mix</a>
                 </Col>
-                <Col sm ={5} className="link text-center" onClick = { () => handleVege()}>
+                <Col sm ={12} md={10} lg={5} className="link text-center" onClick = { () => handleVege()}>
                     <a>Vegetarian</a>
                 </Col>
                 
@@ -73,12 +73,12 @@ const Recipes = () => {
             {vegeRecipes.map((vege) => {
                 return (
             
-                <Col sm = {12} md={6} lg={6}>
+                <Col sm = {12} md={12} lg={6}>
                     <Row className="mb-5">
-                        <Col lg = {6} md={6} sm={12}  >
+                        <Col lg = {6} md={12} sm={12}  >
                             <img className="recipe-img" src={vege.image_url}/>
                         </Col>
-                        <Col sm = {12} md ={6} lg={6}>
+                        <Col sm = {12} md ={12} lg={6} className="pl-4">
                             <Row className="row-name">
                                 <p className="recipe-name">{vege.recipe_name}</p>
                             </Row>
@@ -103,12 +103,12 @@ const Recipes = () => {
             {mixRecipes.map((mix) => {
                 return (
             
-                <Col sm = {12} md={6} lg={6}>
-                    <Row>
-                        <Col sm = {12} md={6} lg={6}>
+                <Col sm = {12} md={12} lg={6}>
+                    <Row className="mb-5">
+                        <Col sm = {12} md={12} lg={6}>
                             <img className="recipe-img" src={mix.image_url}/>
                         </Col>
-                        <Col sm = {12} md={6} lg={6}>
+                        <Col sm = {12} md={12} lg={6} className="pl-4">
                             <Row className="row-name">
                                 <p className="recipe-name">{mix.recipe_name}</p>
                             </Row>
