@@ -79,9 +79,7 @@ const Homepage = () => {
                 </Row>
             </Container>
             <footer className = "footer">
-                <a href ="#">Contact Us</a>
                 <h6>HomeBody Cooks</h6>
-                <a href ="#">FAQs</a>
             </footer>
         </>
     )
