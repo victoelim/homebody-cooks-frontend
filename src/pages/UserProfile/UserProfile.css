@@ -96,3 +96,11 @@
     transition: all 0.3s;
     vertical-align: middle;
   }
+
+
+.profileName button {
+  background-color: #0D1F2D;
+  border: none;
+  color: white;
+  padding: 5px 15px;
+  }

@@ -44,7 +44,7 @@ function App() {
       <Route path = "/HowTo"><HowTo/></Route>
       <Route path ="/choosingknife"><KnifeArticle/></Route>
       <Route path ="/inductionhob"><InductionHobArticle/></Route>
-      <Route path="/me/order_history"><OrderHistory/></Route>
+      <Route path="/me/order_history">{isLoggedin? <OrderHistory/>: <Redirect to="/" />}</Route>
     </Switch>
     <Cart/>
     </LoggedInContext.Provider>

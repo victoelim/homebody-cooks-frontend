@@ -6,6 +6,7 @@ import Container from 'react-bootstrap/Container';
 import axios from 'axios';
 import {toast} from 'react-toastify';
 import Spinner from 'react-bootstrap/Spinner';
+import {Link, Redirect} from 'react-router-dom';
 
 const UserProfile = () => {
     const [userData, updateUserData] = useState([])
@@ -118,8 +119,9 @@ const UserProfile = () => {
                         <Col sm = {6} className = "profileImg d-flex justify-content-end my-5 align-items-center">
                             <img src={profileImg.profile_image_path} alt = "profile image"/>
                         </Col>
-                        <Col sm = {6} className = "profileName d-flex align-items-center my-5">
-                            <h1>{userData.name}</h1>
+                        <Col sm = {6} className = "profileName d-flex flex-column justify-content-center align-items-start my-5">
+                            <h1 className = "mb-3">{userData.name}</h1>
+                            <Link to = "/me/order_history"><button className="w-100 rounded-pill">Order History</button></Link>
                         </Col>
                     </Row>
                 </Container>
