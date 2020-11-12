@@ -7,6 +7,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import "./SignupForm.css";
+import {Redirect} from 'react-router-dom'
 
 
 const SignUpForm = ({setOpen, setIsLogin, setIsLoggedin}) => {
@@ -14,6 +15,7 @@ const SignUpForm = ({setOpen, setIsLogin, setIsLoggedin}) => {
     const [password, setPassword] = useState('');
     const [user_name, setName] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
+    const [redirect, setRedirect] = useState(false)
     const handleSubmit = event => {
         event.preventDefault();
         if (email !== '' && password !== '' && user_name !== '' && (password === confirmPassword)) {
@@ -35,6 +37,8 @@ const SignUpForm = ({setOpen, setIsLogin, setIsLoggedin}) => {
               draggable: true,
               progress: undefined,
               });
+            setOpen(false)
+              
           })
           .catch(error => {
             console.error(error.response) // so that we know what went wrong if the request failed
@@ -52,7 +56,9 @@ const SignUpForm = ({setOpen, setIsLogin, setIsLoggedin}) => {
         else {
             console.log ('error')
         }
-        setOpen(false)
+        setRedirect(true)
+        
+        
         
       };
       const handleClose = () => setOpen(false)
@@ -110,8 +116,9 @@ const SignUpForm = ({setOpen, setIsLogin, setIsLoggedin}) => {
                         </form>
                     <p className="text-center mt-4">Already a user? <span onClick = {() => setIsLogin(true)}>Log In</span></p>
                     </Container>
+                    
             </Modal.Body>
-    
+            {redirect ? <Redirect to = "/plans"/> : ""}
         </>
     )
 }
