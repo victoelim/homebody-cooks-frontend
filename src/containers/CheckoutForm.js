@@ -16,7 +16,7 @@ const Checkout = ({setOpen}) => {
     const [recipe, setRecipe] = useState('')
     useEffect(() => {
         console.log("123")
-        axios.get(`https://homebody-cooks.herokuapp.com/api/v1/subscription_recipes/me/today`, {
+        axios.get(`https://homebody-cooks.herokuapp.com/api/v1/subscription_recipes/me/week`, {
             headers: {
                 "Authorization": "Bearer " +  localStorage.getItem('token')
             }

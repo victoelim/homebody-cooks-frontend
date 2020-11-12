@@ -20,6 +20,7 @@ import ChangePlan from '../src/pages/changePlan/changePlan';
 import HowTo from '../src/pages/How-To/HowTo'; 
 import KnifeArticle from "../src/pages/Knife/Knife"
 import InductionHobArticle from "../src/pages/induction_hob/InductionHob"
+import OrderHistory from './pages/orderHistory/orderHistory';
 
 function App() {
   const [isOpen, setOpen] = useState(false);
@@ -37,12 +38,13 @@ function App() {
       <Route exact path="/"><Homepage/></Route>
       <Route path="/recipes/show"><Recipes/></Route>
       <Route path="/recipes/:id/ingredients"><Ingredients/></Route>
-      <Route path="/me">{isLoggedin ? <UserProfile/>: <Redirect to="/" />}</Route>
+      <Route exact path="/me">{isLoggedin ? <UserProfile/>: <Redirect to="/" />}</Route>
       <Route path="/plans">{isLoggedin ? <ChangePlan/> : <SubscriptionPlan/>}</Route>
       <Route path="/:id/transactions">{isLoggedin? <Transaction/> : <Redirect to = "/"/>}</Route>
       <Route path = "/HowTo"><HowTo/></Route>
       <Route path ="/choosingknife"><KnifeArticle/></Route>
       <Route path ="/inductionhob"><InductionHobArticle/></Route>
+      <Route path="/me/order_history"><OrderHistory/></Route>
     </Switch>
     <Cart/>
     </LoggedInContext.Provider>
