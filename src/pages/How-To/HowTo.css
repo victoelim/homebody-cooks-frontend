@@ -1,0 +1,24 @@
+.thumbnail {
+    height: auto;
+    width: 80%;
+    filter: drop-shadow(4px 3px 3px rgba(0, 0, 0, 0.25));
+    border-radius: 5px;
+}
+
+.rowbottom {
+    border-bottom: 1px solid #0D1F2D;
+}
+
+.articleTitle {
+    color: black;
+    font-weight: bolder;
+}
+
+.Linkp {
+    color: rgb(87, 86, 86);
+}
+
+.Link:hover {
+    color: rgb(100, 100, 100);
+    text-decoration: none;
+}

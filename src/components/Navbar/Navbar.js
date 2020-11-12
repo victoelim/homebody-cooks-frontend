@@ -45,7 +45,7 @@ const WebNavbar = () => {
                 <Nav className="ml-auto align-items-center">
                     <Link className ="reactLink" to = "/recipes/show">Meals</Link>
                     <Link className ="reactLink" to = "/plans">Plans</Link>
-                    <Link className ="reactLink" href="#link">How-To</Link>
+                    <Link className ="reactLink" to = "/HowTo">How-To</Link>
                     {isLoggedin ?
                         <div className='nav-button'>
                             <Link className ="reactLink"to = "/me">Profile</Link>
