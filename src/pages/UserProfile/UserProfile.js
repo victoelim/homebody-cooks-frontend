@@ -121,6 +121,7 @@ const UserProfile = () => {
                         </Col>
                         <Col sm = {6} className = "profileName d-flex flex-column justify-content-center align-items-start my-5">
                             <h1 className = "mb-3">{userData.name}</h1>
+                            <h5 className = "mb-3">Plan Selected: {userData.subscription_name}</h5>
                             <Link to = "/me/order_history"><button className="w-100 rounded-pill">Order History</button></Link>
                         </Col>
                     </Row>
