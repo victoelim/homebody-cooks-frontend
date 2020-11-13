@@ -4,6 +4,7 @@ import axios from 'axios';
 import { Redirect, useParams } from 'react-router-dom';
 import {toast} from 'react-toastify';
 import Spinner from 'react-bootstrap/Spinner';
+import "./Transaction.css"
 
 
 const Transaction = () => {
@@ -84,8 +85,10 @@ const Transaction = () => {
                         
                 </DropIn>
             </div>
+            <div className="payment text-center">
+                <input type="submit" />
+            </div>
             
-            <input type="submit" />
             
         </form>
         :
