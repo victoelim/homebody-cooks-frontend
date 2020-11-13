@@ -1,0 +1,11 @@
+.payment input {
+    padding: 0.5rem 2rem;
+    border-radius: 50px;
+    border: 0;
+    background-color: #0D1F2D;
+    color: white;
+    margin-right: 10px;
+    outline-style: none;
+    outline-width: 0;
+    outline: none;
+}
