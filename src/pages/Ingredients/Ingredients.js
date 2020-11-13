@@ -4,7 +4,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import Spinner from 'react-bootstrap/Spinner';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, Redirect } from 'react-router-dom';
 import {toast} from 'react-toastify'
 import LoggedInContext from "../../containers/LoggedInContext"
 import './Ingredients.css'
@@ -15,6 +15,7 @@ const Ingredients = () => {
     const [ingredients, updateIngredients] = useState([]);
     const [selectedIngredients, setSelectedIngredients] = useState([])
     const [recipe, updateRecipe] = useState([])
+    const [redirect, setRedirect] = useState(false)
     const SignupHandleClick = () => {
         setOpen(true)
         setIsLogin(false)
@@ -77,6 +78,7 @@ const Ingredients = () => {
                 draggable: true,
                 progress: undefined,
             })
+            setRedirect(true)
         })
         .catch(error => {
             console.log(error.response)
@@ -137,9 +139,9 @@ const Ingredients = () => {
             </Spinner>
             </div>
              }
-            
+             {redirect ? <Redirect to ="/recipes/show"></Redirect> : ""}
         </Container>
-        
+       
     )
 }
 
