@@ -11,9 +11,13 @@ import {Link, Redirect} from 'react-router-dom';
 import LoggedInContext from "../../containers/LoggedInContext";
 
 const SubscriptionPlan = () => {
-    const {isLoggedin} = useContext(LoggedInContext)
+    const {isLoggedin, setOpen, setIsLogin, setIsCart} = useContext(LoggedInContext)
     const [plan, setPlan] = useState([])
-    
+    const SignupHandleClick = () => {
+        setOpen(true)
+        setIsLogin(false)
+        setIsCart(false)
+    }
     
     useEffect(() => {
         axios.get (`https://homebody-cooks.herokuapp.com/api/v1/subscriptions/`)
@@ -40,7 +44,7 @@ const SubscriptionPlan = () => {
                                         <Card.Text className = "cardText">
                                         RM {p.price}
                                         </Card.Text>
-                                        <Link to = {`/${p.id}/transactions`}><Button className = "orderButton rounded-pill w-50">Choose Plan</Button></Link>
+                                        {isLoggedin ? <Link to = {`/${p.id}/transactions`}><Button className = "orderButton rounded-pill w-50">Choose Plan</Button></Link> : <Button className = "orderButton rounded-pill w-50" onClick={() => SignupHandleClick()}>Choose Plan</Button> }
                                     </Card.Body>
                                 </Card>
                             </Col>
