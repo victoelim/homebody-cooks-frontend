@@ -11,6 +11,7 @@ import "./orderHistory.css"
 
 const OrderHistory = () => {
     const [previousOrders , setPreviousOrders] = useState([])
+    const [noRecord, setNoRecord] = useState(false)
     useEffect(() => {
         axios.get(`https://homebody-cooks.herokuapp.com/api/v1/users/me/order_history`,{
             headers : {
@@ -20,6 +21,9 @@ const OrderHistory = () => {
         .then(function(response){
             setPreviousOrders(response.data)
             console.log(response.data)
+            if (response.data.length === 0) {
+                setNoRecord(true)
+            }  
     
             
             
@@ -28,8 +32,15 @@ const OrderHistory = () => {
     return (
         <>
         <Container>
-            {previousOrders.length ? 
-            <>
+            {previousOrders.length === 0 && !noRecord ? 
+                <div className="d-flex justify-content-center loading-head">
+                    <Spinner animation="border" role="status" className="loading-div">
+                        <span className="sr-only">Loading...</span>
+                    </Spinner>
+                </div>
+                :
+                previousOrders.length && !noRecord ?
+                <>
                 <h1>Order History</h1>
                 {previousOrders.map((previousOrder) => {
                     return (
@@ -48,13 +59,13 @@ const OrderHistory = () => {
                         </Row>
                     )
                 })}
-            </>
-                :
-            <>
+                </>
+                : 
+                <>
                 <h3 className = "mt-5">Seems like you haven't ordered anything yet.</h3> 
                 <h3>Check out what we have in store for you <Link className ="linktomeal" to ="/recipes/show">here</Link>.</h3>
-            </>
-            }
+                </>
+        }
         </Container>
         </>
     )
