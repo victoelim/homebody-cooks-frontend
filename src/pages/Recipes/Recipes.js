@@ -48,19 +48,19 @@ const Recipes = () => {
         {isVege ?
             <Row className="links justify-content-around">
                 
-                <Col sm ={12} md={10} lg={5} className="link text-center" onClick = { () => handleMix()}>
+                <Col xs ={5} md={5} lg={5} className="link text-center" onClick = { () => handleMix()}>
                     <a>Mix</a>
                 </Col>
-                <Col sm ={12} md={10} lg={5}  className="link-chosen text-center" onClick = { () => handleVege()}>
+                <Col xs ={5} md={5} lg={5}  className="link-chosen text-center" onClick = { () => handleVege()}>
                     <a>Vegetarian</a>
                 </Col>
             </Row>
                 :
             <Row className="links justify-content-around">    
-                <Col sm ={12} md={10} lg={5} className="link-chosen text-center" onClick = { () => handleMix()}>
+                <Col xs ={5} md={5} lg={5} className="link-chosen text-center" onClick = { () => handleMix()}>
                     <a>Mix</a>
                 </Col>
-                <Col sm ={12} md={10} lg={5} className="link text-center" onClick = { () => handleVege()}>
+                <Col xs ={5} md={5} lg={5} className="link text-center" onClick = { () => handleVege()}>
                     <a>Vegetarian</a>
                 </Col>
                 
@@ -78,7 +78,7 @@ const Recipes = () => {
                         <Col lg = {6} md={12} sm={12}  >
                             <img className="recipe-img" src={vege.image_url}/>
                         </Col>
-                        <Col sm = {12} md ={12} lg={6} className="pl-4">
+                        <Col sm = {12} md ={12} lg={6} className="pl-4 recipe-row">
                             <Row className="row-name">
                                 <p className="recipe-name">{vege.recipe_name}</p>
                             </Row>
@@ -87,7 +87,7 @@ const Recipes = () => {
                             </Row>
                             <Row className="row-button">
 
-                                <Link to={`/recipes/${vege.id}/ingredients`}  className="button-link"><button className="rounded-pill w-100">Choose your ingredient</button></Link>
+                                <Link to={`/recipes/${vege.id}/ingredients`}  className="button-link"><button className="rounded-pill w-100 pt-2 pb-2 pl-2 pr-2">Choose ingredient</button></Link>
                             </Row>
                         </Col>
                     </Row>
@@ -116,7 +116,7 @@ const Recipes = () => {
                                 <p>{mix.description}</p>
                             </Row>
                             <Row className="row-button">
-                                <Link to ={`/recipes/${mix.id}/ingredients`} className="button-link"><button className="rounded-pill w-100">Choose your ingredient</button></Link>
+                                <Link to ={`/recipes/${mix.id}/ingredients`} className="button-link"><button className="rounded-pill w-100">Choose ingredient</button></Link>
                             </Row>
                         </Col>
                     </Row>

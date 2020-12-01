@@ -21,7 +21,13 @@
     margin-right: 0;
 }
 
-.nav-button button {
+@media (max-width: 991px){
+    .reactLink{
+        margin-bottom: 20px;
+    }
+}
+
+.nav button {
     padding: 0.5rem 2rem;
     border-radius: 50px;
     border: 0;

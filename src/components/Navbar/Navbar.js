@@ -42,22 +42,24 @@ const WebNavbar = () => {
             <Navbar  href="#home"><Link className = "title m-0" to="/">HomeBody Cooks</Link></Navbar>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
-                <Nav className="ml-auto align-items-center">
+                {isLoggedin ?
+                <Nav className="ml-auto align-items-center nav">
                     <Link className ="reactLink" to = "/recipes/show">Meals</Link>
                     <Link className ="reactLink" to = "/plans">Plans</Link>
                     <Link className ="reactLink" to = "/HowTo">How-To</Link>
-                    {isLoggedin ?
-                        <div className='nav-button'>
-                            <Link className ="reactLink"to = "/me">Profile</Link>
-                            <Link><button onClick={LogOut}>Log out</button></Link>
-                        </div>
-                        :
-                        <div className='nav-button'>
-                            <Link><button onClick={LoginHandleClick}>Log In</button></Link>
-                            <Link><button onClick={SignupHandleClick}>Sign Up</button></Link>
-                        </div>
-                    }
+                    <Link className ="reactLink"to = "/me">Profile</Link>
+                    <Link><button onClick={LogOut}>Log out</button></Link>
                 </Nav>
+                        :
+                <Nav className="ml-auto align-items-center nav">
+                    <Link className ="reactLink" to = "/recipes/show">Meals</Link>
+                    <Link className ="reactLink" to = "/plans">Plans</Link>
+                    <Link className ="reactLink" to = "/HowTo">How-To</Link>        
+                    <Link><button onClick={LoginHandleClick}>Log In</button></Link>
+                    <Link><button onClick={SignupHandleClick}>Sign Up</button></Link>
+                </Nav>
+                    }
+                
             </Navbar.Collapse>
             </Navbar>
 
