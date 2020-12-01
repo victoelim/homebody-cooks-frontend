@@ -35,32 +35,32 @@ const Homepage = () => {
                 </Row>
             </Container>
             <Container fluid className = "steps-section p-0">
-                <Row className = "my-5 mx-0">
-                    <Col sm={12} md = {6} className = "p-0 d-flex justify-content-end">
+                <Row className = "my-5 mx-0 justify-content-center text-center">
+                    <Col sm={12} md = {5} className = "p-0">
                         <img className = "steps-img" src = {Browserimg} alt = "Choosing Meal" />
                     </Col>
-                    <Col sm={12} md = {6} className = "p-0 d-flex flex-column justify-content-center">
+                    <Col sm={12} md = {5} className = "p-0">
                         <h4>Select Your Desired Meals</h4>
                         <p>Choose from our chef concocted meals.</p>
                         <p>Enjoy delicious local cuisines or international flavors.</p>
                         <p>Whatever your heart and taste-buds desires. </p>
                     </Col>
                 </Row>
-                <Row className = "mb-5 mx-0">
-                    <Col sm={12} md = {6} className = "p-0 d-flex flex-column justify-content-center align-items-end">
+                <Row className = "my-5 mx-0 justify-content-center text-center">
+                    <Col sm={12} md = {5} className = "p-0">
                         <h4>Unpack Your Ingredients</h4>
                         <p>Unpack the fresh ingredients that was</p>
                         <p>delivered right to your doorstep.</p>
                     </Col>
-                    <Col sm={12} md={6} className = "p-0">
+                    <Col sm={12} md={5} className = "p-0">
                         <img className = "steps-img ml-2" src = {Unpack} alt = "Choosing Meal" />
                     </Col>
                 </Row>
-                <Row className = "mb-5 mx-0">
-                    <Col sm = {12} md = {6} className = "p-0 d-flex justify-content-end">
+                <Row className = "mb-5 mx-0 justify-content-center text-center">
+                    <Col sm = {12} md = {5} className = "p-0">
                         <img className = "steps-img" src = {Cook} alt = "Choosing Meal" />
                     </Col>
-                    <Col sm = {12} md = {6} className = "p-0 d-flex flex-column justify-content-center">
+                    <Col sm = {12} md = {5} className = "p-0">
                         <h4>Cook And Enjoy</h4>
                         <p>Follow our easy recipes and enjoy the joy of cooking.</p>
                         <p>Enjoy delicious local cuisines or international flavors.</p>

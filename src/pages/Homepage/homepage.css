@@ -88,3 +88,51 @@
 p {
     line-height: 150%;
 }
+
+@media (max-width: 664px){
+    .herotext h2 {
+        font-size: 1.25rem;
+        font-weight: bolder;
+        color: white;
+    }
+    .herotext button {
+        padding: 0.5rem 2rem;
+        border-radius: 50px;
+        border: 0;
+        background-color: #0D1F2D;
+        color: white;
+        margin-right: 10px;
+        font-size: small;
+    }
+}
+
+@media (max-width:432px){
+    .herotext {
+        position: absolute;
+        top: 25%;
+        left: 5%;
+    }
+
+    .herotext h2 {
+        font-size: 1rem;
+        font-weight: bolder;
+        color: white;
+    }
+
+    .herotext span {
+        display: block;
+        margin-bottom: 10px;
+        color: white;
+        font-size: small;
+    }
+
+    .herotext button {
+        padding: 0.5rem 2rem;
+        border-radius: 50px;
+        border: 0;
+        background-color: #0D1F2D;
+        color: white;
+        margin-right: 10px;
+        font-size: 50%;
+    }
+}
